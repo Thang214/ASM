@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": "3",
+      "name": "Product 3",
+      "category": "Sản phẩm",
+      "price": 5.99,
+      "image": "https://picsum.photos/id/12/300/300",
+      "description": "This is product 3",
+      "discount": 0,
+      "quantity": 20
+    },
+    {
+      "id": "4",
+      "name": "Product 4",
+      "category": "Sản phẩm",
+      "price": 14.99,
+      "image": "https://picsum.photos/id/13/300/300",
+      "description": "This is product 4",
+      "discount": 0.2,
+      "quantity": 75
+    },
+    {
+      "id": "5",
+      "name": "Product 5",
+      "category": "Sản phẩm",
+      "price": 9.99,
+      "image": "https://picsum.photos/id/14/300/300",
+      "description": "This is product 5",
+      "discount": 0,
+      "quantity": 150
+    },
+    {
+      "id": "6",
+      "name": "Product 6 dasd",
+      "category": "Sản phẩm",
+      "price": 7.99,
+      "image": "https://picsum.photos/id/15/300/300",
+      "description": "This is product 6",
+      "discount": 0.15,
+      "quantity": 100
+    }
+  ]
+}
