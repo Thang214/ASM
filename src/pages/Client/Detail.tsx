@@ -7,9 +7,6 @@ import sp6 from "../../image/ffef 3.png";
 import sp9 from "../../image/ffef 4.png";
 import sp5 from "../../image/topf-eckig-30l 1.png";
 
-import Footer from "../../components/Client/Footer";
-import Header from "../../components/Client/Header";
-
 const Detail = () => {
   const [quantity, setQuantity] = useState(3);
 
@@ -24,7 +21,7 @@ const Detail = () => {
   };
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="ml-20 pt-20 grid grid-cols-2">
         <div>
           <img src={sp5} alt="" className="ml-28" />
@@ -217,7 +214,7 @@ const Detail = () => {
       <button className="text-white bg-[#4E7C32] p-2 px-4 rounded-lg text-center block mx-auto mb-10">
         See all
       </button>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

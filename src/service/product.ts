@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { axiosInstance } from "../config/axios";
 import { IProduct } from "../interface/product";
 
@@ -46,6 +47,7 @@ export const deleteProduct = async (id: number | string) => {
     const response = await axiosInstance.delete(
       `http://localhost:3000/products/${id}`
     );
+    toast.success("Xóa sản phẩm thành công");
     return response.data;
   } catch (error) {
     console.log(error);

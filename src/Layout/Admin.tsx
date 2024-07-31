@@ -1,13 +1,15 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/Admin/Navbar";
+import React from "react";
 
-const Admin = () => {
+import DefaultLayout from "../components/Admin/DefaultLayout";
+import { Outlet } from "react-router-dom";
+
+const Admin: React.FC = () => {
   return (
-    <div>
-      <Navbar />
-      <Outlet />
-      {/* <Aside /> */}
-    </div>
+    <DefaultLayout>
+      <div className="s">
+        <Outlet />
+      </div>
+    </DefaultLayout>
   );
 };
 

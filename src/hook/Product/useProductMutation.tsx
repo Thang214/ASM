@@ -1,11 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IProduct } from "../interface/product";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { IProduct } from "../../interface/product";
 import {
   createProduct,
   deleteProduct,
   updateProduct,
-} from "../service/product";
+} from "../../service/product";
 type useProductMutationProps = {
   action: "CREATE" | "UPDATE" | "DELETE";
 };
@@ -31,17 +33,23 @@ const useProductMutation = ({ action }: useProductMutationProps) => {
     },
   });
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const { mutate, ...rest } = useMutation({
     mutationFn: async (product: IProduct) => {
       switch (action) {
         case "CREATE":
           await createProduct(product);
+          navigate("/admin/products/list");
+          toast.success("Thêm sản phẩm thành công");
           break;
         case "UPDATE":
           await updateProduct(product);
+          navigate("/admin/products/list");
+          toast.success("Cập nhật sản phẩm thành công");
           break;
         case "DELETE":
           await deleteProduct(product.id!);
+          // toast.success("Xóa sản phẩm thành công");
           break;
         default:
           return null;

@@ -1,44 +1,116 @@
 {
   "products": [
     {
-      "id": "3",
-      "name": "Product 3",
+      "name": "Product 5 update",
       "category": "Sản phẩm",
-      "price": 5.99,
-      "image": "https://picsum.photos/id/12/300/300",
-      "description": "This is product 3",
-      "discount": 0,
-      "quantity": 20
-    },
-    {
-      "id": "4",
-      "name": "Product 4",
-      "category": "Sản phẩm",
-      "price": 14.99,
-      "image": "https://picsum.photos/id/13/300/300",
-      "description": "This is product 4",
-      "discount": 0.2,
-      "quantity": 75
-    },
-    {
-      "id": "5",
-      "name": "Product 5",
-      "category": "Sản phẩm",
-      "price": 9.99,
+      "price": 234242,
       "image": "https://picsum.photos/id/14/300/300",
       "description": "This is product 5",
       "discount": 0,
-      "quantity": 150
+      "quantity": 0,
+      "id": 1
     },
     {
-      "id": "6",
-      "name": "Product 6 dasd",
+      "name": "Product 5 update",
       "category": "Sản phẩm",
-      "price": 7.99,
-      "image": "https://picsum.photos/id/15/300/300",
-      "description": "This is product 6",
-      "discount": 0.15,
-      "quantity": 100
+      "price": 234234,
+      "image": "https://picsum.photos/id/14/300/300",
+      "description": "This is product 5",
+      "discount": 0,
+      "quantity": 0,
+      "id": 2
+    },
+    {
+      "name": "Trần Đức Thắng",
+      "category": "Thang Tran",
+      "price": 769,
+      "image": "https://picsum.photos/300/300",
+      "description": "Sofa này để cô đơn không phải để ngồi",
+      "discount": 0,
+      "quantity": 0,
+      "id": 3
+    },
+    {
+      "name": "Trần Đức Thắng",
+      "category": "Sản phẩm",
+      "price": 234234,
+      "image": "https://picsum.photos/300/300",
+      "description": "Sofa này để cô đơn không phải để ngồi",
+      "discount": 0,
+      "quantity": 0,
+      "id": 4
+    },
+    {
+      "name": "Trần Đức Thắng",
+      "category": "Sản phẩm",
+      "price": 999999,
+      "image": "https://picsum.photos/300/300",
+      "description": "Sofa này để cô đơn không phải để ngồi",
+      "discount": 0,
+      "quantity": 0,
+      "id": 5
+    },
+    {
+      "name": "Trần Đức Thắng",
+      "category": "Sản phẩm",
+      "price": 45645645,
+      "image": "https://picsum.photos/id/12/300/300",
+      "description": "Sofa này để cô đơn không phải để ngồi",
+      "discount": 0,
+      "quantity": 0,
+      "id": 6
+    },
+    {
+      "name": "Trần Đức Thắng",
+      "category": "Danh mục 1",
+      "price": 534534,
+      "image": "https://picsum.photos/id/12/300/300",
+      "description": "Sofa này để cô đơn không phải để ngồi",
+      "discount": 0,
+      "quantity": 0,
+      "id": 7
+    }
+  ],
+  "categorys": [
+    {
+      "name": "Danh mục 1",
+      "image": "https://picsum.photos/id/20/295/400",
+      "id": 1
+    },
+    {
+      "name": "Danh mục 2",
+      "image": "https://picsum.photos/id/23/295/400",
+      "id": 2
+    },
+    {
+      "name": "Danh mục 3",
+      "image": "https://picsum.photos/id/34/295/400",
+      "id": 3
+    },
+    {
+      "name": "Danh mục 4",
+      "image": "https://picsum.photos/id/38/295/400",
+      "id": 4
+    },
+    {
+      "name": "Danh mục 5",
+      "image": "https://picsum.photos/id/12/295/400",
+      "id": 5
+    },
+    {
+      "name": "Danh mục 6",
+      "image": "https://picsum.photos/id/43/295/400",
+      "id": 6
+    },
+    {
+      "name": "Danh mục 7",
+      "image": "https://picsum.photos/id/66/295/400",
+      "id": 7
+    },
+    {
+      "name": "Danh mục 8",
+      "image": "https://picsum.photos/id/68/295/400",
+      "id": 8
     }
   ]
 }

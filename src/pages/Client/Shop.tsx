@@ -1,45 +1,69 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import sp8 from "../../image/annie-spratt-ncQ2sguVlgo-unsplash 1.png";
 import sp3 from "../../image/dedww 1.png";
 import sp4 from "../../image/gbfdf 1.png";
-import sp7 from "../../image/gfree 1.png";
 import sp1 from "../../image/htgyr 1.png";
 import sp2 from "../../image/hthrt 1.jpg";
-import sp6 from "../../image/ntghtg 2.png";
-import sp5 from "../../image/topf-eckig-30l 1.png";
-import Footer from "../../components/Client/Footer";
-import Header from "../../components/Client/Header";
 
 import {
   AiOutlineHeart,
   AiOutlineShareAlt,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { axiosInstance } from "../../config/axios";
+import useProductQuery from "../../hook/Product/useProductQuery";
+import { Category } from "../../interface/category";
+import { IProduct } from "../../interface/product";
 
-const Shop = () => {
+type Props = {
+  categories: Category[];
+};
+
+const Shop = ({ categories = [] }: Props) => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(8000);
-
-  const handleMinChange = (e) => {
-    setMinPrice(e.target.value);
-  };
-
-  const handleMaxChange = (e) => {
-    setMaxPrice(e.target.value);
-  };
   const [minSize, setMinSize] = useState(2);
   const [maxSize, setMaxSize] = useState(50);
+  const [categorys, setCategorys] = useState<Category[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const { data: products } = useProductQuery();
 
-  const handleMinChangeSize = (e) => {
-    setMinSize(e.target.value);
+  const filteredProducts = products?.filter(
+    (product: { category: string }) =>
+      selectedCategory === "" || product.category === selectedCategory
+  );
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await axiosInstance.get(`categorys`);
+      setCategorys(data);
+    })();
+  }, []);
+
+
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCategory(e.target.value);
   };
 
-  const handleMaxChangeSize = (e) => {
-    setMaxSize(e.target.value);
+  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMinPrice(Number(e.target.value));
   };
+
+  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMaxPrice(Number(e.target.value));
+  };
+
+  const handleMinChangeSize = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMinSize(Number(e.target.value));
+  };
+
+  const handleMaxChangeSize = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMaxSize(Number(e.target.value));
+  };
+
   return (
     <div>
-      <Header />
       <div className="text-[#505F4E] text-3xl font-baloo bg-[#D2E8CD] p-20">
         <p className="ml-24">Töpfe & Behälter</p>
       </div>
@@ -63,15 +87,18 @@ const Shop = () => {
       </div>
       <div className="flex space-x-10 ml-32">
         <div className="flex">
-          <p className="mt-1">Sort By:</p>
+          <p className="mt-1">Category:</p>
           <select
-            name="sort"
-            id="sort-select"
+            value={selectedCategory}
+            onChange={handleCategoryChange}
             className="border-gray-300 text-gray-400 w-48 p-2 rounded-lg border-solid border ml-2"
           >
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-            <option value="alphabetical">Alphabetical</option>
+            <option value="">All Categories</option>
+            {categorys.map((item) => (
+              <option key={item.id} value={item.name}>
+                {item.name}
+              </option>
+            ))}
           </select>
         </div>
         <div className="flex">
@@ -89,169 +116,31 @@ const Shop = () => {
       </div>
 
       <div className=" grid grid-cols-2 gap-30">
-        <div>
-          <div className="flex gap-32 ml-36 pb-16 w-4/5 ">
-            <div className="relative group mt-10">
+        <div className="ml-22 grid grid-cols-3 w-full gap-20">
+          {filteredProducts?.map((item: IProduct) => (
+            <div className="relative group mt-10" key={item.id}>
               <div className="relative">
-                <img src={sp7} alt="Square cultivation pots" className="" />
+                <Link to={`/detail/${item.id}`}>
+                  <img src={item.image} alt="Product" className="" />
+                </Link>
                 <div className="absolute top-16 left-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2 ">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-2">
-                <p>Square cultivation pots</p>
-                <span className="text-gray-400">
-                  $38.00 <del className="text-gray-500 ml-3">$45.00</del>
-                </span>
-              </div>
-            </div>
-            <div className="relative group">
-              <div className="relative mt-7">
-                <img src={sp6} alt="Square cultivation pots" className="" />
-                <div className="absolute top-20 left-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2 mb-">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-2">
-                <p>Round plant pots</p>
-                <span className="text-gray-400">$28.00</span>
-              </div>
-            </div>
-            <div className="relative group mt-14">
-              <div className="relative">
-                <img src={sp5} alt="Square cultivation pots" className="" />
-                <div className="absolute top-10 left-7 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex space-x-2">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-7">
-                <p>Square plant pots</p>
-                <span className="text-gray-400">
-                  $21.00 <del className="text-gray-500 ml-4">$45.00</del>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex gap-32 ml-36 pb-16 w-4/5 ">
-            <div className="relative group mt-10">
-              <div className="relative">
-                <img src={sp7} alt="Square cultivation pots" className="" />
-                <div className="absolute top-16 left-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2 ">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
+                    <AiOutlineShareAlt className=" text-3xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
+                    <AiOutlineShoppingCart className="text-3xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
+                    <AiOutlineHeart className=" text-3xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
                   </div>
                 </div>
               </div>
               <div className="mt-2">
-                <p>Square cultivation pots</p>
+                <Link to={`/detail/${item.id}`}>
+                  <p>{item.name}</p>
+                </Link>
                 <span className="text-gray-400">
-                  $38.00 <del className="text-gray-500 ml-3">$45.00</del>
+                  ${item.price} <del className="text-gray-500 ml-3">$50</del>
                 </span>
               </div>
             </div>
-            <div className="relative group">
-              <div className="relative mt-7">
-                <img src={sp6} alt="Square cultivation pots" className="" />
-                <div className="absolute top-20 left-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2 mb-">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-2">
-                <p>Round plant pots</p>
-                <span className="text-gray-400">$28.00</span>
-              </div>
-            </div>
-            <div className="relative group mt-14">
-              <div className="relative">
-                <img src={sp5} alt="Square cultivation pots" className="" />
-                <div className="absolute top-10 left-7 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-7">
-                <p>Square plant pots</p>
-                <span className="text-gray-400">
-                  $21.00 <del className="text-gray-500 ml-4">$45.00</del>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex gap-32 ml-36 pb-16 w-4/5 ">
-            <div className="relative group mt-10">
-              <div className="relative">
-                <img src={sp7} alt="Square cultivation pots" className="" />
-                <div className="absolute top-16 left-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2 ">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-2">
-                <p>Square cultivation pots</p>
-                <span className="text-gray-400">
-                  $38.00 <del className="text-gray-500 ml-3">$45.00</del>
-                </span>
-              </div>
-            </div>
-            <div className="relative group">
-              <div className="relative mt-7">
-                <img src={sp6} alt="Square cultivation pots" className="" />
-                <div className="absolute top-20 left-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2 mb-">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-2">
-                <p>Round plant pots</p>
-                <span className="text-gray-400">$28.00</span>
-              </div>
-            </div>
-            <div className="relative group mt-14">
-              <div className="relative">
-                <img src={sp5} alt="Square cultivation pots" className="" />
-                <div className="absolute top-10 left-7 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2">
-                    <AiOutlineShareAlt className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineShoppingCart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                    <AiOutlineHeart className="bg-[#4E7C32] text-xl cursor-pointer rounded-sm  text-[#fff] hover:text-black bg-[#4E7C32]" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-7">
-                <p>Square plant pots</p>
-                <span className="text-gray-400">
-                  $21.00 <del className="text-gray-500 ml-4">$45.00</del>
-                </span>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
         <div className="mr-24">
           <div className="relative right-0 ml-80">
@@ -348,8 +237,6 @@ const Shop = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };
