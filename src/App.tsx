@@ -13,6 +13,7 @@ import Detail from "./pages/Client/Detail";
 import Home from "./pages/Client/Home";
 import Shop from "./pages/Client/Shop";
 import Search from "./pages/Client/Search";
+import Category from "./pages/Client/Category";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/category/:id" element={<Category />} />
         </Route>
         <Route path="/admin" element={<Admin />}>
           <Route path="products/list" element={<ProductList />} />

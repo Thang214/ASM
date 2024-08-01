@@ -36,10 +36,10 @@ const ListCategory = () => {
             </thead>
 
             <tbody className="divide-y divide-gray-200">
-              {data.map((item: Category, index: number) => (
-                <tr key={index}>
-                  <td className="text-center px-4 py-2 font-medium text-black">
-                    {index + 1}
+              {data.map((item: Category) => (
+                <tr key={item.id}>
+                  <td className="text-center px-4 py-2 text-black ">
+                    {item.id}
                   </td>
                   <td className="text-center px-4 py-2 text-black flex justify-center">
                     <img src={item.image} alt="" width="100" height="100" />

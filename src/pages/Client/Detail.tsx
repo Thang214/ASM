@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
+import { useParams } from "react-router-dom";
+import useProductQuery from "../../hook/Product/useProductQuery";
 import sp8 from "../../image/20210212_140441_InPixio 1.png";
 import sp7 from "../../image/ffef 1.png";
 import sp6 from "../../image/ffef 3.png";
 import sp9 from "../../image/ffef 4.png";
-import sp5 from "../../image/topf-eckig-30l 1.png";
-import { useParams } from "react-router-dom";
-import useProductQuery from "../../hook/Product/useProductQuery";
 
 const Detail = () => {
   const [quantity, setQuantity] = useState(3);
@@ -28,7 +27,7 @@ const Detail = () => {
       {/* <Header /> */}
       <div className="ml-20 pt-20 grid grid-cols-2">
         <div>
-          <img src={sp5} alt="" className="ml-28" />
+          <img src={data?.image} alt="" className="ml-28" />
           <div className="flex space-x-1 ml-14 mt-4">
             <img src={sp6} alt="" />
             <img
@@ -46,11 +45,11 @@ const Detail = () => {
         <div>
           <p className="text-[#4E7C32] font-kumbh">PLANT</p>
           <h1 className="text-4xl font-kumbh font-bold mt-4 mb-4">
-            {data.name}
+            {data?.name}
           </h1>
-          <span className="text-[#68707D] mt-4">{data.description}</span>
+          <span className="text-[#68707D] mt-4">{data?.description}</span>
           <div className="flex space-x-4 mt-4">
-            <p className="font-bold">${data.price}</p>
+            <p className="font-bold">${data?.price}</p>
             <span className="bg-[#FFEDE0] text-[#4E7C32] rounded-lg P-2">
               50%
             </span>

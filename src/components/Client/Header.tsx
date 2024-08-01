@@ -27,6 +27,7 @@ const Header = () => {
   };
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
     const { keywords } = data;
     navigate(`search?keyword=${keywords}`);

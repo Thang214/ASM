@@ -10,7 +10,7 @@ import {
   AiOutlineShareAlt,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { axiosInstance } from "../../config/axios";
 import useProductQuery from "../../hook/Product/useProductQuery";
 import { Category } from "../../interface/category";
@@ -20,7 +20,8 @@ type Props = {
   categories: Category[];
 };
 
-const Shop = ({ categories = [] }: Props) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const CategoryPage = ({ categories = [] }: Props) => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(8000);
   const [minSize, setMinSize] = useState(2);
@@ -28,21 +29,40 @@ const Shop = ({ categories = [] }: Props) => {
   const [categorys, setCategorys] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const { data: products } = useProductQuery();
-
-  const filteredProducts = products?.filter(
-    (product: { category: string }) =>
-      selectedCategory === "" || product.category === selectedCategory
-  );
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     (async () => {
-      const { data } = await axiosInstance.get(`categorys`);
+      const { data } = await axiosInstance.get("categorys");
       setCategorys(data);
     })();
   }, []);
 
+  useEffect(() => {
+    if (id) {
+      const selected = categorys.find((category) => category.id === id);
+      if (selected) {
+        setSelectedCategory(selected.name);
+      }
+    } else {
+      setSelectedCategory("");
+    }
+  }, [id, categorys]);
+
+  const filteredProducts = products?.filter(
+    (product: IProduct) =>
+      selectedCategory === "" || product.category === selectedCategory
+  );
+
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCategory(e.target.value);
+    const selected = categorys.find((cat) => cat.name === e.target.value);
+    if (selected) {
+      setSelectedCategory(selected.name);
+      window.history.pushState(null, "", `/category/${selected.id}`);
+    } else {
+      setSelectedCategory("");
+      window.history.pushState(null, "", "/category");
+    }
   };
 
   const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -114,7 +134,7 @@ const Shop = ({ categories = [] }: Props) => {
         </div>
       </div>
 
-      <div className=" grid grid-cols-2 gap-30">
+      <div className="grid grid-cols-2 gap-30">
         <div className="ml-22 grid grid-cols-3 w-full gap-20">
           {filteredProducts?.map((item: IProduct) => (
             <div className="relative group mt-10" key={item.id}>
@@ -151,15 +171,15 @@ const Shop = ({ categories = [] }: Props) => {
                 <input type="checkbox" />
                 <p>Eckige Töpfe</p>
               </div>
-              <div className="flex mt-4  ml-20">
+              <div className="flex mt-4 ml-20">
                 <input type="checkbox" />
                 <p>Eckige Töpfe</p>
               </div>
-              <div className="flex mt-4  ml-20">
+              <div className="flex mt-4 ml-20">
                 <input type="checkbox" />
                 <p>Eckige Töpfe</p>
               </div>
-              <div className="flex mt-4  ml-20">
+              <div className="flex mt-4 ml-20">
                 <input type="checkbox" />
                 <p>Eckige Töpfe</p>
               </div>
@@ -228,7 +248,7 @@ const Shop = ({ categories = [] }: Props) => {
               </div>
               <div className="flex justify-between mt-8 w-full">
                 <div className="text-gray-400 ">
-                  {minSize}mm to mm{maxSize}
+                  {minSize}mm to {maxSize}mm
                 </div>
                 <button className="text-gray-500 ml-4">Filter</button>
               </div>
@@ -240,4 +260,4 @@ const Shop = ({ categories = [] }: Props) => {
   );
 };
 
-export default Shop;
+export default CategoryPage;

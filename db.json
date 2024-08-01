@@ -111,6 +111,16 @@
       "name": "Danh mục 8",
       "image": "https://picsum.photos/id/68/295/400",
       "id": 8
+    },
+    {
+      "name": "Thang Tran",
+      "image": "https://picsum.photos/id/68/295/400",
+      "id": 9
+    },
+    {
+      "name": "Sản phẩm",
+      "image": "https://picsum.photos/id/68/295/400",
+      "id": 10
     }
   ]
 }
