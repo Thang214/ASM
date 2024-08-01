@@ -6,6 +6,8 @@ import sp7 from "../../image/ffef 1.png";
 import sp6 from "../../image/ffef 3.png";
 import sp9 from "../../image/ffef 4.png";
 import sp5 from "../../image/topf-eckig-30l 1.png";
+import { useParams } from "react-router-dom";
+import useProductQuery from "../../hook/Product/useProductQuery";
 
 const Detail = () => {
   const [quantity, setQuantity] = useState(3);
@@ -19,6 +21,8 @@ const Detail = () => {
   const handleIncrement = () => {
     setQuantity(quantity + 1);
   };
+  const { id } = useParams();
+  const { data } = useProductQuery(id);
   return (
     <div>
       {/* <Header /> */}
@@ -42,22 +46,16 @@ const Detail = () => {
         <div>
           <p className="text-[#4E7C32] font-kumbh">PLANT</p>
           <h1 className="text-4xl font-kumbh font-bold mt-4 mb-4">
-            Square cultivation pots <br />
-            0.27 to 2 litres
+            {data.name}
           </h1>
-          <span className="text-[#68707D] mt-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting{" "}
-            <br />
-            industry. Lorem Ipsum has been the industry's standard dummy <br />
-            text ever since the
-          </span>
+          <span className="text-[#68707D] mt-4">{data.description}</span>
           <div className="flex space-x-4 mt-4">
-            <p className="font-bold">$125.00</p>
+            <p className="font-bold">${data.price}</p>
             <span className="bg-[#FFEDE0] text-[#4E7C32] rounded-lg P-2">
               50%
             </span>
           </div>
-          <del className="mt-4 text-sm font-bold">$250.00</del>
+          <del className="mt-4 text-sm font-bold text-red-400">$250.00</del>
           <div className="flex space-x-10 mt-4">
             <div className="flex items-center justify-between w-40 p-2 bg-gray-50 rounded-lg">
               <button className="" onClick={handleDecrement}>

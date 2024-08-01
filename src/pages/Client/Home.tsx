@@ -1,19 +1,16 @@
+import { Category } from "@/interface/category";
 import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import useCategoryQuery from "../../hook/Category/useCategoryQuery";
 import useProductQuery from "../../hook/Product/useProductQuery";
 import anh6 from "../../image/AdobeStock_204287225_Preview 1.png";
 import anh10 from "../../image/bfdsA 1.png";
-import gb4 from "../../image/dwdwqa 1.png";
 import anh9 from "../../image/ffgdsa 1.png";
 import anh1 from "../../image/fwfqq 1.png";
 import anh8 from "../../image/gggrrr 1.png";
 import anh7 from "../../image/gtgre 1.png";
-import gb3 from "../../image/htrtggh 1.png";
-import gb1 from "../../image/Mask group 1.png";
-import gb2 from "../../image/Mask group.png";
 import { IProduct } from "../../interface/product";
-import useCategoryQuery from "../../hook/Category/useCategoryQuery";
-import { Category } from "@/interface/category";
+import { Link } from "react-router-dom";
 const slides = [
   {
     text: "Wir kümmern uns um Ihre schöner Garten und Haus",
@@ -100,7 +97,9 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ml-4 ">
           {productsToShow.map((item: IProduct) => (
             <div key={item.id} className="p-4">
-              <img src={item.image} alt={item.name} className="" />
+              <Link to={`/detail/${item.id}`}>
+                <img src={item.image} alt={item.name} className="" />
+              </Link>
               <p className="text-[#665345] mt-4">{item.name}</p>
               <div className="flex mt-4">
                 <span className="text-sm text-[#665345]">{item.category}</span>
@@ -164,7 +163,7 @@ const Home = () => {
       <hr className="bg-[#F5F5F5] w-full mx-auto hidden md:block" />
       <div className="bg-[#F5F5F5] pt-10">
         <div className=" grid grid-cols-4 justify-between ml-14">
-          {categorys.map((category: Category) => (
+          {categorys?.map((category: Category) => (
             <div className="relative mt-6" key={category.id}>
               <img
                 src={category.image}

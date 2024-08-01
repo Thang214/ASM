@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import {
   FaBars,
   FaSearch,
@@ -6,7 +7,7 @@ import {
   FaTimes,
   FaUser,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [growboxDropdownOpen, setGrowboxDropdownOpen] = useState(false);
@@ -24,18 +25,29 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const onSubmit = (data: any) => {
+    const { keywords } = data;
+    navigate(`search?keyword=${keywords}`);
+  };
   return (
     <header className="bg-gradient-to-r from-[#4E7C32] to-[#A7AF97]">
       <div className="flex items-center justify-between p-4">
-        <div className="flex items-center w-full md:w-2/6 bg-white px-4 py-2 rounded ml-48">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex items-center w-full md:w-2/6 bg-white px-4 py-2 rounded ml-48"
+        >
           <input
-            type="search"
+            type="text"
+            {...register("keywords")}
             className="outline-none placeholder-gray-400 flex-1 "
             placeholder="Suchen Sie nach Produkten, Marken und mehr"
           />
-          <FaSearch className="h-5 w-5 text-gray-400 ml-2" />
-        </div>
+          <button>
+            <FaSearch className="h-5 w-5 text-gray-400 ml-2" />
+          </button>
+        </form>
         <div className="flex space-x-16 pr-40">
           <div className="hidden md:flex items-center text-white ml-4">
             <p>EN</p>

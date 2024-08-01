@@ -12,6 +12,7 @@ import ProductList from "./pages/Admin/Product-List/ProductList";
 import Detail from "./pages/Client/Detail";
 import Home from "./pages/Client/Home";
 import Shop from "./pages/Client/Shop";
+import Search from "./pages/Client/Search";
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
         <Route element={<Client />}>
           <Route index element={<Home />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/search" element={<Search />} />
         </Route>
         <Route path="/admin" element={<Admin />}>
           <Route path="products/list" element={<ProductList />} />
