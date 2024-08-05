@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import {
-  FaBars,
+  FaUser,
   FaSearch,
   FaShoppingCart,
+  FaBars,
   FaTimes,
-  FaUser,
 } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Header = () => {
   const [growboxDropdownOpen, setGrowboxDropdownOpen] = useState(false);
@@ -25,9 +25,9 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
     const { keywords } = data;
     navigate(`search?keyword=${keywords}`);
@@ -43,7 +43,7 @@ const Header = () => {
             type="text"
             {...register("keywords")}
             className="outline-none placeholder-gray-400 flex-1 "
-            placeholder="Suchen Sie nach Produkten, Marken und mehr"
+            placeholder="Tìm kiếm "
           />
           <button>
             <FaSearch className="h-5 w-5 text-gray-400 ml-2" />
@@ -66,11 +66,16 @@ const Header = () => {
           </div>
           <div className="hidden md:flex items-center text-white ml-4">
             <FaUser />
-            <p className="ml-2">Account</p>
+            <Link to={`/login`} className="ml-2">
+              Tài khoản
+            </Link>
+            {/* <Link to={`admin`} className="ml-2">Admin</Link */}
           </div>
           <div className="hidden md:flex items-center text-white ml-4">
-            <FaShoppingCart />
-            <p className="ml-2">Cart</p>
+            <Link to={`cart`} className="flex">
+              <FaShoppingCart className="mt-1" />
+              <p className="ml-2">Giỏ hàng</p>
+            </Link>
           </div>
         </div>
         <button className="block md:hidden text-white" onClick={toggleMenu}>
@@ -84,11 +89,11 @@ const Header = () => {
           menuOpen ? "block" : "hidden"
         } md:block`}
       >
-        <ul className="flex flex-col md:flex-row justify-center md:justify-start">
-          <li className="relative mx-2">
+        <ul className="flex flex-col md:flex-row justify-center md:justify-start ">
+          <li className="relative mx-2 ml-8">
             <Link to="">
               <div className="block py-2 md:py-6 text-white">
-                Beleuchtung
+                Trang chủ
                 <svg
                   className="w-4 h-4 inline-block ml-1"
                   viewBox="0 0 20 20"
@@ -103,12 +108,12 @@ const Header = () => {
               </div>
             </Link>
           </li>
-          <li className="relative mx-2">
+          <li className="relative mx-2 ml-14">
             <div
               className="block py-2 md:py-6 text-white cursor-pointer"
               onClick={toggleGrowboxDropdown}
             >
-              Growbox
+              Cửa hàng
               <svg
                 className="w-4 h-4 inline-block ml-1"
                 viewBox="0 0 20 20"
@@ -122,24 +127,25 @@ const Header = () => {
               </svg>
             </div>
             {growboxDropdownOpen && (
-              <div className="absolute left-0 mt-1 bg-white shadow-lg rounded-md">
+              <div className="absolute left-0 mt-1 bg-white shadow-lg rounded-md z-20">
                 <ul className="py-1">
                   <li>
                     <Link
                       to="/shop"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     >
-                      Komplettsets
+                      Sản phẩm
                     </Link>
                   </li>
                 </ul>
               </div>
             )}
           </li>
-          <li className="relative mx-2">
+
+          <li className="relative mx-2 ml-14">
             <Link to="">
               <div className="block py-2 md:py-6 text-white">
-                Dünger
+                Danh mục
                 <svg
                   className="w-4 h-4 inline-block ml-1"
                   viewBox="0 0 20 20"
@@ -154,10 +160,10 @@ const Header = () => {
               </div>
             </Link>
           </li>
-          <li className="relative mx-2">
+          <li className="relative mx-2 ml-14">
             <Link to="">
               <div className="block py-2 md:py-6 text-white">
-                Erde & Substrate
+                Liên hệ
                 <svg
                   className="w-4 h-4 inline-block ml-1"
                   viewBox="0 0 20 20"
@@ -172,12 +178,12 @@ const Header = () => {
               </div>
             </Link>
           </li>
-          <li className="relative mx-2">
+          <li className="relative mx-2 ml-14">
             <div
               className="block py-2 md:py-6 text-white cursor-pointer"
               onClick={toggleToepfeDropdown}
             >
-              Töpfe & Behälter
+              Về chúng tôi
               <svg
                 className="w-4 h-4 inline-block ml-1"
                 viewBox="0 0 20 20"
@@ -192,47 +198,19 @@ const Header = () => {
             </div>
             {toepfeDropdownOpen && (
               <div className="absolute left-0 mt-1 bg-white shadow-lg rounded-md">
-                <ul className="py-1">
-                  <li>
-                    <Link
-                      to=""
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-                    >
-                      Eckige Töpfe
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to=""
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-                    >
-                      Runde Töpfe
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to=""
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-                    >
-                      Untersetzer
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to=""
-                      className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-                    >
-                      Pflanzschalen
-                    </Link>
-                  </li>
-                </ul>
+                {/* <ul className="py-1">
+                                    <li><Link to="" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Chậu tròn</Link></li>
+                                    <li><Link to="" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Chậu vuông</Link></li>
+                                    <li><Link to="" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Đế lót ly</Link></li>
+                                    <li><Link to="" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Chậu trồng cây</Link></li>
+                                </ul> */}
               </div>
             )}
           </li>
-          <li className="relative mx-2">
+          <li className="relative mx-2 ml-14">
             <Link to="">
               <div className="block py-2 md:py-6 text-white">
-                Bewässerung
+                Giới Thiệu
                 <svg
                   className="w-4 h-4 inline-block ml-1"
                   viewBox="0 0 20 20"
@@ -247,10 +225,10 @@ const Header = () => {
               </div>
             </Link>
           </li>
-          <li className="relative mx-2">
+          <li className="relative mx-2 ml-14">
             <Link to="">
               <div className="block py-2 md:py-6 text-white">
-                Pflanzen & Gärtnern
+                Góp ý
                 <svg
                   className="w-4 h-4 inline-block ml-1"
                   viewBox="0 0 20 20"
@@ -265,10 +243,10 @@ const Header = () => {
               </div>
             </Link>
           </li>
-          <li className="relative mx-2">
+          <li className="relative mx-2 ml-14">
             <Link to="">
               <div className="block py-2 md:py-6 text-white">
-                Lüftung & Klimaanlage
+                Địa chỉ
                 <svg
                   className="w-4 h-4 inline-block ml-1"
                   viewBox="0 0 20 20"

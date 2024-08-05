@@ -1,74 +1,47 @@
 {
   "products": [
     {
-      "name": "Product 5 update",
-      "category": "Sản phẩm",
-      "price": 234242,
-      "image": "https://picsum.photos/id/14/300/300",
-      "description": "This is product 5",
-      "discount": 0,
-      "quantity": 0,
-      "id": 1
-    },
-    {
-      "name": "Product 5 update",
-      "category": "Sản phẩm",
-      "price": 234234,
-      "image": "https://picsum.photos/id/14/300/300",
-      "description": "This is product 5",
-      "discount": 0,
-      "quantity": 0,
-      "id": 2
-    },
-    {
-      "name": "Trần Đức Thắng",
-      "category": "Thang Tran",
-      "price": 769,
-      "image": "https://picsum.photos/300/300",
-      "description": "Sofa này để cô đơn không phải để ngồi",
-      "discount": 0,
-      "quantity": 0,
-      "id": 3
-    },
-    {
-      "name": "Trần Đức Thắng",
-      "category": "Sản phẩm",
-      "price": 234234,
-      "image": "https://picsum.photos/300/300",
-      "description": "Sofa này để cô đơn không phải để ngồi",
-      "discount": 0,
-      "quantity": 0,
-      "id": 4
-    },
-    {
-      "name": "Trần Đức Thắng",
-      "category": "Sản phẩm",
-      "price": 999999,
-      "image": "https://picsum.photos/300/300",
-      "description": "Sofa này để cô đơn không phải để ngồi",
-      "discount": 0,
-      "quantity": 0,
-      "id": 5
-    },
-    {
-      "name": "Trần Đức Thắng",
-      "category": "Sản phẩm",
-      "price": 45645645,
-      "image": "https://picsum.photos/id/12/300/300",
-      "description": "Sofa này để cô đơn không phải để ngồi",
-      "discount": 0,
-      "quantity": 0,
-      "id": 6
-    },
-    {
       "name": "Trần Đức Thắng",
       "category": "Danh mục 1",
       "price": 534534,
       "image": "https://picsum.photos/id/12/300/300",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+      "id": 7,
+      "short_desc": "Sofa này để cô đơn không phải để ngồi"
+    },
+    {
+      "name": "Sản phẩm 2",
+      "category": "Danh mục 2",
+      "price": 4234234,
+      "image": "https://picsum.photos/id/12/300/300",
       "description": "Sofa này để cô đơn không phải để ngồi",
-      "discount": 0,
-      "quantity": 0,
-      "id": 7
+      "id": 8
+    },
+    {
+      "name": "Sản phẩm 3",
+      "category": "Danh mục 3",
+      "price": 2342,
+      "image": "https://picsum.photos/id/12/300/300",
+      "description": "Sofa này để cô đơn không phải để ngồi",
+      "id": 9
+    },
+    {
+      "name": "Sản phẩm 4",
+      "category": "Danh mục 4",
+      "price": 4656,
+      "image": "https://picsum.photos/id/14/300/300",
+      "description": "Sofa này để cô đơn không phải để ngồi",
+      "id": 10
+    },
+    {
+      "name": "Product 1",
+      "category": "Danh mục 1",
+      "price": 100,
+      "image": "https://picsum.photos/100/100",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+      "short_desc": "Day la san pham 1",
+      "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+      "id": 11
     }
   ],
   "categorys": [
@@ -91,36 +64,165 @@
       "name": "Danh mục 4",
       "image": "https://picsum.photos/id/38/295/400",
       "id": 4
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$YkKKz36CTKGM8AKHS3B3z.m80Di..fwzthO8pZi9HZnNqsKj5n332",
+      "name": "Thang dep trai",
+      "confirmPassword": "123456",
+      "id": 1
     },
     {
-      "name": "Danh mục 5",
-      "image": "https://picsum.photos/id/12/295/400",
-      "id": 5
+      "email": "member@gmail.com",
+      "password": "$2a$10$ir3ajzLJ4kYAvmwNWh5rj.AbLD4w/LUlnnOs.yD.pYKsZij2T47o.",
+      "name": "Thang zai dep",
+      "confirmPassword": "123456",
+      "id": 2
+    }
+  ],
+  "carts": [
+    {
+      "id": 11,
+      "name": "Product 1",
+      "quantity": 1,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+      "price": 100,
+      "image": "https://picsum.photos/100/100"
     },
     {
-      "name": "Danh mục 6",
-      "image": "https://picsum.photos/id/43/295/400",
-      "id": 6
-    },
+      "id": 7,
+      "name": "Trần Đức Thắng",
+      "quantity": 1,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+      "price": 534534,
+      "image": "https://picsum.photos/id/12/300/300"
+    }
+  ],
+  "orders": [
     {
-      "name": "Danh mục 7",
-      "image": "https://picsum.photos/id/66/295/400",
-      "id": 7
-    },
-    {
-      "name": "Danh mục 8",
-      "image": "https://picsum.photos/id/68/295/400",
-      "id": 8
+      "name": "Thang Tran",
+      "sdt": "0993432423",
+      "email": "thang234321@gmail.com",
+      "diachi": "Thắng Hahahahah",
+      "items": [
+        {
+          "id": 11,
+          "name": "Product 1",
+          "quantity": 8,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 100,
+          "image": "https://picsum.photos/100/100"
+        },
+        {
+          "id": 7,
+          "name": "Trần Đức Thắng",
+          "quantity": 7,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 534534,
+          "image": "https://picsum.photos/id/12/300/300"
+        }
+      ],
+      "totalAmount": 3742547.2,
+      "id": 2
     },
     {
       "name": "Thang Tran",
-      "image": "https://picsum.photos/id/68/295/400",
-      "id": 9
+      "sdt": "0993432423",
+      "email": "thang234321@gmail.com",
+      "diachi": "Thắng Hahahahah",
+      "items": [
+        {
+          "id": 11,
+          "name": "Product 1",
+          "quantity": 8,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 100,
+          "image": "https://picsum.photos/100/100"
+        },
+        {
+          "id": 7,
+          "name": "Trần Đức Thắng",
+          "quantity": 7,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 534534,
+          "image": "https://picsum.photos/id/12/300/300"
+        }
+      ],
+      "totalAmount": 3742547.2,
+      "id": 3
     },
     {
-      "name": "Sản phẩm",
-      "image": "https://picsum.photos/id/68/295/400",
-      "id": 10
+      "name": "Thang Tran",
+      "sdt": "0993432423",
+      "email": "thang234321@gmail.com",
+      "diachi": "Thắng Hahahahah",
+      "items": [
+        {
+          "id": 11,
+          "name": "Product 1",
+          "quantity": 8,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 100,
+          "image": "https://picsum.photos/100/100"
+        },
+        {
+          "id": 7,
+          "name": "Trần Đức Thắng",
+          "quantity": 7,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 534534,
+          "image": "https://picsum.photos/id/12/300/300"
+        }
+      ],
+      "totalAmount": 3742547.2,
+      "id": 4
+    },
+    {
+      "name": "Thang Tran",
+      "sdt": "0993432423",
+      "email": "thang234321@gmail.com",
+      "diachi": "Thắng Hahahahah",
+      "items": [
+        {
+          "id": 11,
+          "name": "Product 1",
+          "quantity": 1,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 100,
+          "image": "https://picsum.photos/100/100"
+        }
+      ],
+      "totalAmount": 109.2,
+      "id": 5
+    },
+    {
+      "name": "Thang Tran",
+      "sdt": "0993432423",
+      "email": "thang234321@gmail.com",
+      "diachi": "Thắng Hahahahah",
+      "items": [
+        {
+          "id": 11,
+          "name": "Product 1",
+          "quantity": 1,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 100,
+          "image": "https://picsum.photos/100/100"
+        }
+      ],
+      "totalAmount": 109.2,
+      "id": 6
+    },
+    {
+      "name": "Thang Tran",
+      "sdt": "0993432423",
+      "email": "thang234321@gmail.com",
+      "diachi": "Thắng Hahahahah",
+      "items": [],
+      "totalAmount": 9.2,
+      "id": 7
     }
   ]
 }

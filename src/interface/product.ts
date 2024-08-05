@@ -5,5 +5,6 @@ export interface IProduct {
   price: number;
   image: string;
   description: string;
+  short_desc?: string;
+  about?: string;
 }
-//

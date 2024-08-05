@@ -67,7 +67,10 @@ const fireToast = () => {
   const alertSettings = localStorage.getItem('alertSettings');
   if (alertSettings) {
     for (const alertSetting of JSON.parse(alertSettings)) {
-      console.log(alertSetting);
+      console.log(
+        
+        
+        Setting);
 
       const value = isNaN(parseFloat(alertSetting.value))
         ? alertSetting.value

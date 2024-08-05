@@ -17,8 +17,8 @@ type Inputs = {
   price: number;
   image: string;
   description: string;
-  discount: number;
-  quantity: number;
+  short_desc: string;
+  about: string;
 };
 const useProductMutation = ({ action }: useProductMutationProps) => {
   const form = useForm<Inputs>({
@@ -28,8 +28,8 @@ const useProductMutation = ({ action }: useProductMutationProps) => {
       price: 0,
       image: "",
       description: "",
-      discount: 0,
-      quantity: 0,
+      short_desc: "",
+      about: ""
     },
   });
   const queryClient = useQueryClient();

@@ -1,4 +1,5 @@
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import imft from "../../image/icons_payment 1.png";
 
 const Footer = () => {
@@ -7,12 +8,13 @@ const Footer = () => {
       <div className="bg-gradient-to-br from-[#fff] to-[#DCEED9] pb-20 pt-10">
         <div className="max-w-[1200px] mx-auto px-4">
           <h1 className="text-3xl font-bold font-baloo text-[#505F4E] text-center md:text-left">
-            Etwas abonnieren * <br />_ Unser Newsletter
+            Đăng ký ngay * <br />_ Bản tin người dùng
           </h1>
           <div className="mt-4 flex flex-col md:flex-row items-center">
-            <p className="text-[#555555] text-center md:text-left md:ml-20">
-              Get weekly update about our <br /> product on your email, no spam{" "}
-              <br /> guaranteed we promise{" "}
+            <p className="text-[#555555] text-center md:text-left md:ml-10">
+              Nhận cập nhật hàng tuần về chúng tôi sản phẩm trên <br /> email
+              của bạn, không có thư rác đảm bảo <br />
+              chúng tôi hứa
               <span role="img" aria-label="peace">
                 ✌️
               </span>
@@ -32,11 +34,14 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="youremail123@gmail.com"
-                  className="w-full md:w-64 pr-10 py-3 pl-10 border rounded-md focus:outline-none focus:ring-2"
+                  className="w-full md:w-96 pr-20 py-3 pl-10  border rounded-md focus:outline-none focus:ring-2"
                 />
-                <button className="bg-[#656C66] absolute right-0 top-0 bottom-0 px-4 py-2 rounded-md">
-                  ABONNIEREN
-                </button>
+                <Link
+                  to={`/register`}
+                  className="bg-[#656C66] absolute px-4 right-0 mt-10 py-2 rounded-md"
+                >
+                  Đăng ký
+                </Link>
               </div>
             </div>
           </div>
@@ -46,9 +51,9 @@ const Footer = () => {
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-20">
           <div className="flex-1 mb-6 md:mb-0">
             <p className="text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing <br />
-              elit, sed do eiusmod tempor incididunt ut labore et <br />
-              dolore magna aliqua
+              Khách hàng rất quan trọng, khách hàng sẽ được tuân theo nhưng điều
+              tương tự cũng xảy ra cùng lúc với lao động và với một số nỗi đau
+              lớn
             </p>
             <div className="flex items-center space-x-4 mt-6">
               <a href="#" className="text-white hover:text-gray-900">
@@ -66,32 +71,32 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex-1 text-white">
-            <h4 className="font-semibold">Um</h4>
+            <h4 className="font-semibold">Xung quanh</h4>
             <ul className="mt-3">
-              <li className="mt-3">Kontaktiere uns</li>
-              <li className="mt-3">Über uns</li>
-              <li className="mt-3">Karriere</li>
-              <li className="mt-3">Unternehmensinformationen</li>
+              <li className="mt-3">Liên hệ chúng tôi</li>
+              <li className="mt-3">Về chúng tôi </li>
+              <li className="mt-3">Sự nghiệp</li>
+              <li className="mt-3">Thông tin công ty</li>
             </ul>
           </div>
           <div className="flex-1 text-white">
-            <h4 className="font-semibold">Hilfe</h4>
+            <h4 className="font-semibold">Giúp đỡ</h4>
             <ul className="mt-3">
-              <li className="mt-3">Unsere Produzenten</li>
-              <li className="mt-3">Zahlung</li>
-              <li className="mt-3">Versand</li>
-              <li className="mt-3">Stornierung & Rückgabe</li>
-              <li className="mt-3">Verstoß melden</li>
+              <li className="mt-3">Nhà sản xuất của chúng tôi </li>
+              <li className="mt-3">Sự chi trả</li>
+              <li className="mt-3">Lô hàng</li>
+              <li className="mt-3">Hủy & Trả hàng</li>
+              <li className="mt-3"> Báo cáo một sự vi phạm</li>
             </ul>
           </div>
           <div className="flex-1 text-white">
-            <h4 className="font-semibold">Politik</h4>
+            <h4 className="font-semibold">Chính trị</h4>
             <ul className="mt-3">
-              <li className="mt-3">Rücknahmegarantie</li>
-              <li className="mt-3">Nutzungsbedingungen</li>
-              <li className="mt-3">Sicherheit</li>
-              <li className="mt-3">Privatsphäre</li>
-              <li className="mt-3">Seitenverzeichnis</li>
+              <li className="mt-3">Đảm bảo hoàn trả</li>
+              <li className="mt-3">Điều khoản sử dụng</li>
+              <li className="mt-3">Bảo vệ</li>
+              <li className="mt-3">Sự riêng tư</li>
+              <li className="mt-3">Thư mục trang</li>
             </ul>
           </div>
         </div>

@@ -129,6 +129,21 @@ const ProductEdit = () => {
 
                 <div className="mb-4">
                   <label
+                    htmlFor="productName"
+                    className="block text-gray-700 font-bold mb-2"
+                  >
+                    Mô tả ngắn
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-3 py-2 border border-gray-300 rounded"
+                    id="productDesc"
+                    {...form.register("short_desc")}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label
                     htmlFor="productDesc"
                     className="block text-gray-700 font-bold mb-2"
                   >
@@ -139,6 +154,20 @@ const ProductEdit = () => {
                     className="w-full px-3 py-2 border border-gray-300 rounded"
                     id="productDesc"
                     {...form.register("description")}
+                  />
+                </div>
+                <div className="mb-4">
+                  <label
+                    htmlFor="productDesc"
+                    className="block text-gray-700 font-bold mb-2"
+                  >
+                    About
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-3 py-2 border border-gray-300 rounded"
+                    id="aboout"
+                    {...form.register("about")}
                   />
                 </div>
 
