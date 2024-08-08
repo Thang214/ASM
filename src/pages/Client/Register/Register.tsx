@@ -54,7 +54,9 @@ const Register = () => {
         navigate("/login");
       }, 1000);
     },
-    onError: (error) => console.log(error),
+    onError: (error) => (
+      toast.error("Đăng ký thất bại!"), console.log(error.message)
+    ),
   });
   const onSubmit = (formData: {
     name: string;

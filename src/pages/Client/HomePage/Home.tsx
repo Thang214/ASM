@@ -1,16 +1,9 @@
-// import { Category } from "@/interface/category";
-// import { useState } from "react";
-// import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-// import useCategoryQuery from "../../../hook/Category/useCategoryQuery";
-// import useProductQuery from "../../../hook/Product/useProductQuery";
+
 import anh6 from "../../../image/AdobeStock_204287225_Preview 1.png";
 import anh10 from "../../../image/bfdsA 1.png";
 import anh9 from "../../../image/ffgdsa 1.png";
-// import anh1 from "../../../image/fwfqq 1.png";
 import anh8 from "../../../image/gggrrr 1.png";
 import anh7 from "../../../image/gtgre 1.png";
-// import { IProduct } from "../../../interface/product";
-// import { Link } from "react-router-dom";
 import Banner from "./component/Banner";
 import BestSellers from "./component/BestSellers";
 import { useEffect, useState } from "react";
@@ -18,8 +11,6 @@ import axios from "axios";
 import { IProduct } from "../../../interface/product";
 import Kategorien from "./component/Kategorien";
 const Home = () => {
-  // const { data: products } = useProductQuery();
-  // const { data: categorys } = useCategoryQuery();
 
   const [products, setProducts] = useState<IProduct[]>([]);
   useEffect(() => {
@@ -42,10 +33,8 @@ const Home = () => {
         </p>
       </div>
 
-      {/* Best Seller */}
       <BestSellers products={products} />
 
-      {/* Ảnh Các Thứ */}
       <div className="bg-[#F5F5F5] flex space-x-5 justify-center py-20">
         <div className="relative inline-block group">
           <img src={anh6} alt="Garten Spaten" className="block" />
@@ -83,28 +72,10 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Danh mục */}
       <p className="font-baloo text-2xl text-[#505F4E] bg-[#F5F5F5] pl-20">
         Kategorien
       </p>
       <hr className="bg-[#F5F5F5] w-full mx-auto hidden md:block" />
-      {/* <div className="bg-[#F5F5F5] pt-10">
-        <div className=" grid grid-cols-4 justify-between ml-14">
-          {categorys?.map((category: Category) => (
-            <div className="relative mt-6" key={category.id}>
-              <img
-                src={category.image}
-                alt="Beleuchtung"
-                className="block ml-2"
-              />
-              <div className="absolute inset-0 ml-48 mb-72 flex flex-col justify-center bg-opacity-50">
-                <p className="text-white text-lg">{category.name}</p>
-                <span className="text-white text-sm">30 items</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div> */}
       <Kategorien />
     </div>
   );

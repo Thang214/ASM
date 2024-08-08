@@ -1,69 +1,76 @@
 {
   "products": [
     {
-      "name": "Trần Đức Thắng",
-      "category": "Danh mục 1",
+      "name": "Samsung Galaxy S24 Ultra 12GB 256GB update",
+      "category": "SamSung",
       "price": 534534,
-      "image": "https://picsum.photos/id/12/300/300",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/s/ss-s24-ultra-xam-222.png",
+      "description": "Samsung S24 Ultra là siêu phẩm smartphone đỉnh cao mở đầu năm 2024 đến từ nhà Samsung với chip Snapdragon 8 Gen 3 For Galaxy mạnh mẽ, công nghệ tương lai Galaxy AI cùng khung viền Titan đẳng cấp hứa hẹn sẽ mang tới nhiều sự thay đổi lớn về mặt thiết kế và cấu hình. SS Galaxy S24 bản Ultra sở hữu màn hình 6.8 inch Dynamic AMOLED 2X tần số quét 120Hz. Máy cũng sở hữu camera chính 200MP, camera zoom quang học 50MP, camera tele 10MP và camera góc siêu rộng 12MP.",
       "id": 7,
-      "short_desc": "Sofa này để cô đơn không phải để ngồi"
+      "short_desc": "Mới, đầy đủ phụ kiện từ nhà sản xuất",
+      "about": "Vì sao nên mua Samsung Galaxy S24 Ultra? Đầu năm 2024, Samsung cho ra mắt Samsung S24 Ultra – Flagship dẫn đầu xu hướng với công nghệ AI tích hợp cùng nhiều tính năng và ưu điểm vượt trội khác. Các tính năng AI nổi bật trên điện thoại Samsung mới nhất bao gồm:  - Galaxy AI với các tính năng Khoanh tròn để tìm kiếm, Photo Assist, Live Translate, Note Assist.  - Khung viền bằng titan cứng cáp, giúp thiết bị bền bỉ theo thời gian.  - Các phiên bản màu lấy cảm hứng từ chất liệu đá tự nhiên, mang đến vẻ đẹp sang trọng và hiện đại.  - Camera tích hợp công nghệ AI tuyệt đỉnh, nâng tầm chất lượng và khả năng xử lý hình ảnh.  - Hiệu năng cực đỉnh với chip Snapdragon 8 Gen3 for Galaxy, chiến game mượt mà.  - Pin khoẻ 5000mAh, kéo dài thời gian sử dụng cả ngày dài, để không bỏ lỡ khoảnh khắc quan trọng.  - Màn hình Dynamic AMOLED 2X với độ sáng lên đến 2600 nit, chìm đắm trong thế giới hình ảnh rực rỡ đầy màu sắc."
     },
     {
-      "name": "Sản phẩm 2",
-      "category": "Danh mục 2",
+      "name": "Samsung Galaxy Z Fold6",
+      "category": "SamSung",
       "price": 4234234,
-      "image": "https://picsum.photos/id/12/300/300",
-      "description": "Sofa này để cô đơn không phải để ngồi",
-      "id": 8
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-z-fold-6-xanh_5_.png",
+      "description": "Samsung Z Fold 6 là siêu phẩm điện thoại gập được ra mắt ngày 10/7, hiệu năng dẫn đầu phân khúc với chip 8 nhân Snapdragon 8 Gen 3 for Galaxy, 12GB RAM cùng bộ nhớ trong từ 256GB đến 1TB. Thay đổi mạnh mẽ về hiệu năng và thiết kế, Galaxy Z Fold 6 hứa hẹn sẽ là chiếc smartphone AI đáng sở hữu nhất nửa cuối năm 2024. Cùng CellphoneS cập nhật tất tần tật thông tin về Galaxy Z Fold6 ngay đây nhé!",
+      "id": 8,
+      "short_desc": "Màn hình chính Dynamic AMOLED 2X 7.6 inch cho trải nghiệm giải trí, làm việc đỉnh cao.",
+      "about": "Samsung Galaxy Z Fold 6 là bước nhảy vọt về công nghệ điện thoại gập, mang lại trải nghiệm độc đáo và vượt trội cho người dùng. Có 8 lý do vì sao nên mua Samsugn Z Fold 6 như sau:  - Tích hợp các tính năng Galaxy AI: Khoanh tròn để tìm kiếm, Trợ lý Note quyền năng, Trợ lý chat thông minh, Interpreter,...  - Thiết kế siêu mỏng nhẹ với trọng lượng chỉ 249g, độ mỏng 5.6mm dễ dàng cầm nắm và mang theo.  - Màu sắc tinh tế, thời thượng, thể hiện cá tính riêng: Xám Metal, Hồng Rosé, Xanh Navy.  - Hiệu năng mạnh mẽ như PC thu nhỏ với bộ vi xử lý Snapdragon® 8 Gen 3 for Galaxy tối ưu riêng cho điện thoại Samsung.  - Dung lượng pin 4400mAh mang đến trải nghiệm liên tục mà không lo gián đoạn.  - Màn hình với độ sáng tối đa 2600 nits, cho khả năng hiển thị ấn tượng dưới nhiều điều kiện ánh sáng khác nhau.  - Màn hình ngoài kích thước 6.3 inch, mở rộng diện tích hiển thị.  - Camera thu phóng sắc nét, chụp ảnh chi tiết và sống động cùng khả năng chụp ảnh chuyên nghiệp với ProVisual Engine."
     },
     {
-      "name": "Sản phẩm 3",
-      "category": "Danh mục 3",
+      "name": "iPhone 15 Pro Max 256GB | Chính hãng VN/A",
+      "category": "Iphone",
       "price": 2342,
-      "image": "https://picsum.photos/id/12/300/300",
-      "description": "Sofa này để cô đơn không phải để ngồi",
-      "id": 9
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-max_3.png",
+      "description": "iPhone 15 Pro Max sở hữu màn hình Super Retina XDR OLED 6.7 inches với độ phân giải 2796 x 1290 pixels, cung cấp trải nghiệm hình ảnh sắc nét, chân thực. So với các phiên bản tiền nhiệm, thế hệ iPhone 15 bản Pro Max đảm bảo mang tới hiệu năng mạnh mẽ với sự hỗ trợ của chipset Apple A17 Pro, cùng bộ nhớ ấn tượng. Đặc biệt hơn, điện thoại iPhone 15 ProMax mới này còn được đánh giá cao với camera sau 48MP và camera trước 12MP, hỗ trợ chụp ảnh với độ rõ nét cực đỉnh.",
+      "id": 9,
+      "short_desc": "Máy mới 100% , chính hãng Apple Việt Nam. CellphoneS hiện là đại lý bán lẻ uỷ quyền iPhone chính hãng VN/A của Apple Việt Nam",
+      "about": "iPhone 15 Pro Max không chỉ ghi điểm với cấu hình mạnh mẽ mà còn gây ấn tượng với nhiều tính năng mới đáng chú ý. Từ thiết kế khung titan cho tới hiệu năng đột phá, tất cả đều được nâng cấp để mang tới cho người dùng trải nghiệm smartphone tuyệt vời chưa từng có. Những tính năng này sẽ được trình bày chi tiết hơn trong các phần bài viết dưới đây, giúp bạn có cái nhìn toàn diện về sự đột phá của iPhone 15 ProMax.  Kiểu dáng sang trọng, thiết kế Titan thời thượng Thiết kế titan dễ dàng thể hiện được nét đẳng cấp và sự tinh tế ngay từ vẻ bề ngoài của iPhone 15 Pro Max. Khung viền titan bóng bẩy của máy, được chế tác qua nhiều quy trình gia công cơ khí, chà nhám và đánh bóng, mang lại vẻ đẹp sang trọng và độ bền tuyệt vời. Với khung viền uốn cong và kiểu dáng siêu mỏng, thế hệ iPhone này đem lại trải nghiệm cầm nắm khá thoải mái."
     },
     {
-      "name": "Sản phẩm 4",
-      "category": "Danh mục 4",
+      "name": "iPhone 13 128GB | Chính hãng VN/A",
+      "category": "Iphone",
       "price": 4656,
-      "image": "https://picsum.photos/id/14/300/300",
-      "description": "Sofa này để cô đơn không phải để ngồi",
-      "id": 10
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-13_2_.png",
+      "description": "Về kích thước, iPhone 13 sẽ có 4 phiên bản khác nhau và kích thước không đổi so với series iPhone 12 hiện tại. Nếu iPhone 12 có sự thay đổi trong thiết kế từ góc cạnh bo tròn (Thiết kế được duy trì từ thời iPhone 6 đến iPhone 11 Pro Max) sang thiết kế vuông vắn (đã từng có mặt trên iPhone 4 đến iPhone 5S, SE).",
+      "id": 10,
+      "short_desc": "Máy mới 100% , chính hãng Apple Việt Nam. CellphoneS hiện là đại lý bán lẻ uỷ quyền iPhone chính hãng VN/A của Apple Việt Nam",
+      "about": "iPhone 15 Pro Max không chỉ ghi điểm với cấu hình mạnh mẽ mà còn gây ấn tượng với nhiều tính năng mới đáng chú ý. Từ thiết kế khung titan cho tới hiệu năng đột phá, tất cả đều được nâng cấp để mang tới cho người dùng trải nghiệm smartphone tuyệt vời chưa từng có. Những tính năng này sẽ được trình bày chi tiết hơn trong các phần bài viết dưới đây, giúp bạn có cái nhìn toàn diện về sự đột phá của iPhone 15 ProMax.  Kiểu dáng sang trọng, thiết kế Titan thời thượng Thiết kế titan dễ dàng thể hiện được nét đẳng cấp và sự tinh tế ngay từ vẻ bề ngoài của iPhone 15 Pro Max. Khung viền titan bóng bẩy của máy, được chế tác qua nhiều quy trình gia công cơ khí, chà nhám và đánh bóng, mang lại vẻ đẹp sang trọng và độ bền tuyệt vời. Với khung viền uốn cong và kiểu dáng siêu mỏng, thế hệ iPhone này đem lại trải nghiệm cầm nắm khá thoải mái."
     },
     {
-      "name": "Product 1",
-      "category": "Danh mục 1",
-      "price": 100,
-      "image": "https://picsum.photos/100/100",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
-      "short_desc": "Day la san pham 1",
-      "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+      "name": "Nokia 105 4G Pro",
+      "category": "Nokia",
+      "price": 1000,
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/n/o/nokia-105-4g-pro_1__1.png",
+      "description": "Nhà sản xuất Nokia chắc hẳn đã muốn tạo ra một sản phẩm có thời lượng sử dụng cao hơn tương đối so với các dòng máy cục gạch phổ thông khác. Do vậy, Nokia 105 4G Pro đã được tích hợp viên pin với mức dung lượng khá lớn là 1450mAh. ",
+      "short_desc": "Nokia 105 4G Pro sở hữu màn hình IPS LCD có kích thước 1.77 inch đem lại cho người dùng khả năng hiển thị chữ rõ nét hơn. Cùng với đó, dung lượng pin 1450mAh đem lại khả năng sử dụng lâu dài trong nhiều ngày. Với sự trang bị chipset Unisoc T107 và bộ nhớ trong 128MB, sản phẩm đem lại trải nghiệm ổn định cho người dùng.",
+      "about": "Điện thoại Nokia 105 4G Pro được trang bị con chip Unisoc T107 đem lại khả năng sử dụng ổn định, mượt mà cho người dùng. Máy cũng hỗ trợ 2 tới sim để thuận tiện trong việc nghe gọi. Một trong những tính năng đặc biệt có thể kể tới của Nokia 105 4G Pro chính là việc hoạt động như một đài FM thu nhỏ. ",
       "id": 11
     }
   ],
   "categorys": [
     {
-      "name": "Danh mục 1",
-      "image": "https://picsum.photos/id/20/295/400",
-      "id": 1
-    },
-    {
-      "name": "Danh mục 2",
-      "image": "https://picsum.photos/id/23/295/400",
-      "id": 2
-    },
-    {
-      "name": "Danh mục 3",
-      "image": "https://picsum.photos/id/34/295/400",
+      "name": "SamSung",
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/s/ss-s24-ultra-xam-222.png",
       "id": 3
     },
     {
-      "name": "Danh mục 4",
-      "image": "https://picsum.photos/id/38/295/400",
+      "name": "Xiaomi",
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/_/t_i_xu_ng_22__6.png",
       "id": 4
+    },
+    {
+      "name": "Iphone",
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-max_3.png",
+      "id": 5
+    },
+    {
+      "name": "Nokia",
+      "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/n/o/nokia-105-4g-pro_1__1.png",
+      "id": 6
     }
   ],
   "users": [
@@ -80,26 +87,16 @@
       "name": "Thang zai dep",
       "confirmPassword": "123456",
       "id": 2
-    }
-  ],
-  "carts": [
-    {
-      "id": 11,
-      "name": "Product 1",
-      "quantity": 1,
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
-      "price": 100,
-      "image": "https://picsum.photos/100/100"
     },
     {
-      "id": 7,
-      "name": "Trần Đức Thắng",
-      "quantity": 1,
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
-      "price": 534534,
-      "image": "https://picsum.photos/id/12/300/300"
+      "email": "thang234321@gmail.com",
+      "password": "$2a$10$UUeitPd.G8UhSoVTKfZ6OOG4A2FhX9uCwfsKgZ6v5yzLEPtABgPCq",
+      "name": "thang234321@gmail.com",
+      "confirmPassword": "123456",
+      "id": 3
     }
   ],
+  "carts": [],
   "orders": [
     {
       "name": "Thang Tran",
@@ -223,6 +220,84 @@
       "items": [],
       "totalAmount": 9.2,
       "id": 7
+    },
+    {
+      "name": "",
+      "sdt": "",
+      "email": "",
+      "diachi": "",
+      "items": [
+        {
+          "id": 11,
+          "name": "Product 1",
+          "quantity": 1,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 100,
+          "image": "https://picsum.photos/100/100"
+        },
+        {
+          "id": 7,
+          "name": "Trần Đức Thắng",
+          "quantity": 2,
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled i",
+          "price": 534534,
+          "image": "https://picsum.photos/id/12/300/300"
+        }
+      ],
+      "totalAmount": 1069177.2,
+      "id": 8
+    },
+    {
+      "name": "Thang Tran",
+      "sdt": "0993432423",
+      "email": "thang234321@gmail.com",
+      "diachi": "Thắng Hahahahah",
+      "items": [
+        {
+          "id": 9,
+          "name": "iPhone 15 Pro Max 256GB | Chính hãng VN/A",
+          "quantity": 2,
+          "description": "iPhone 15 Pro Max sở hữu màn hình Super Retina XDR OLED 6.7 inches với độ phân giải 2796 x 1290 pixels, cung cấp trải nghiệm hình ảnh sắc nét, chân thực. So với các phiên bản tiền nhiệm, thế hệ iPhone 15 bản Pro Max đảm bảo mang tới hiệu năng mạnh mẽ với sự hỗ trợ của chipset Apple A17 Pro, cùng bộ nhớ ấn tượng. Đặc biệt hơn, điện thoại iPhone 15 ProMax mới này còn được đánh giá cao với camera sau 48MP và camera trước 12MP, hỗ trợ chụp ảnh với độ rõ nét cực đỉnh.",
+          "price": 2342,
+          "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-max_3.png"
+        },
+        {
+          "id": 10,
+          "name": "iPhone 13 128GB | Chính hãng VN/A",
+          "quantity": 2,
+          "description": "Về kích thước, iPhone 13 sẽ có 4 phiên bản khác nhau và kích thước không đổi so với series iPhone 12 hiện tại. Nếu iPhone 12 có sự thay đổi trong thiết kế từ góc cạnh bo tròn (Thiết kế được duy trì từ thời iPhone 6 đến iPhone 11 Pro Max) sang thiết kế vuông vắn (đã từng có mặt trên iPhone 4 đến iPhone 5S, SE).",
+          "price": 4656,
+          "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-13_2_.png"
+        },
+        {
+          "id": 11,
+          "name": "Nokia 105 4G Pro",
+          "quantity": 1,
+          "description": "Nhà sản xuất Nokia chắc hẳn đã muốn tạo ra một sản phẩm có thời lượng sử dụng cao hơn tương đối so với các dòng máy cục gạch phổ thông khác. Do vậy, Nokia 105 4G Pro đã được tích hợp viên pin với mức dung lượng khá lớn là 1450mAh. ",
+          "price": 1000,
+          "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/n/o/nokia-105-4g-pro_1__1.png"
+        }
+      ],
+      "totalAmount": 15005.2,
+      "id": 9
+    },
+    {
+      "name": "Thang Tran",
+      "sdt": "0993432423",
+      "email": "thang234321@gmail.com",
+      "diachi": "Thắng Hahahahah",
+      "items": [
+        {
+          "id": 11,
+          "name": "Nokia 105 4G Pro",
+          "quantity": 1,
+          "description": "Nhà sản xuất Nokia chắc hẳn đã muốn tạo ra một sản phẩm có thời lượng sử dụng cao hơn tương đối so với các dòng máy cục gạch phổ thông khác. Do vậy, Nokia 105 4G Pro đã được tích hợp viên pin với mức dung lượng khá lớn là 1450mAh. ",
+          "price": 1000,
+          "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/n/o/nokia-105-4g-pro_1__1.png"
+        }
+      ],
+      "totalAmount": 1009.2,
+      "id": 10
     }
   ]
 }

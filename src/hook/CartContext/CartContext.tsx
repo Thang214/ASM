@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { axiosInstance } from "../../config/axios";
+import { toast } from "react-toastify";
 
 type Props = {
   children: React.ReactNode;
@@ -20,6 +21,8 @@ interface ShoppingContextType {
   addCartItem: (item: CartItem) => void; // Thay đổi ở đây
   removeCartItem: (id: number | string) => void;
   updateQuantity: (name: string, quantity: number) => void;
+  clearCart: () => void;
+  cartQty?: number;
 }
 
 export const CartContextCT = createContext<ShoppingContextType>(
@@ -28,7 +31,13 @@ export const CartContextCT = createContext<ShoppingContextType>(
 
 const CartContext = ({ children }: Props) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-
+  const cartQty = cartItems.reduce(
+    (quantity, item) => quantity + item.quantity,
+    0
+  );
+  const clearCart = () => {
+    setCartItems([]);
+  };
   useEffect(() => {
     (async () => {
       const { data } = await axiosInstance.get(`carts`);
@@ -66,14 +75,25 @@ const CartContext = ({ children }: Props) => {
   };
 
   const removeCartItem = (id: number | string) => {
-    (async () => {
-      await axiosInstance.delete(`carts/${id}`);
-      setCartItems(cartItems.filter((item) => item.id !== id && id));
-    })();
+    const confirm = window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này?");
+    if (confirm) {
+      (async () => {
+        await axiosInstance.delete(`carts/${id}`);
+        setCartItems(cartItems.filter((item) => item.id !== id && id));
+        toast.error("Đã xóa sản phẩm khỏi giỏ hàng.");
+      })();
+    }
   };
   return (
     <CartContextCT.Provider
-      value={{ cartItems, updateQuantity, addCartItem, removeCartItem }}
+      value={{
+        cartItems,
+        updateQuantity,
+        addCartItem,
+        removeCartItem,
+        clearCart,
+        cartQty,
+      }}
     >
       {children}
     </CartContextCT.Provider>

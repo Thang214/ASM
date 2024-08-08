@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { FaEye, FaRegHeart } from "react-icons/fa";
 import { LiaShoppingBagSolid } from "react-icons/lia";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { axiosInstance } from "../../../../config/axios";
 import useProductQuery from "../../../../hook/Product/useProductQuery";
 import { Category } from "../../../../interface/category";
@@ -25,15 +25,14 @@ const ShopFilter = () => {
       setCategorys(data);
     })();
   }, []);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity] = useState(1);
   const { addCartItem } = useContext(CartContextCT);
-  const navigate = useNavigate();
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCategory(e.target.value);
   };
   const handleAddToCart = async (product: IProduct) => {
     const cartItem: CartItem = {
-      id: product.id,
+      id: product.id!,
       name: product.name,
       quantity,
       description: product.description,
@@ -56,11 +55,17 @@ const ShopFilter = () => {
       }
 
       addCartItem(cartItem);
-      navigate("/cart");
+      toast.success("Thêm vào giỏ hàng thành công😍");
     } catch (error) {
       console.error("Error adding item to cart:", error);
-      toast.success("Đã xảy ra lỗi khi thêm vào giỏ hàng.");
+      toast.success("Đã xảy ra lỗi khi thêm vào giỏ hàng😢");
     }
+  };
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(value);
   };
 
   return (
@@ -96,35 +101,43 @@ const ShopFilter = () => {
       </div>
       <div className="w-[80%] mx-auto gap-10 flex flex-col">
         <div className="w-full flex gap-12">
-          <div className="grid grid-cols-3 gap-20 w-3/4 h-auto mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 xl:gap-10 w-full md:w-3/4 h-auto mt-2">
             {filteredProducts?.map((item: IProduct, index: number) => (
               <div key={index} className="relative flex flex-col gap-2 group">
                 <div className="w-full">
-                  <img src={item.image} alt="" className="w-full h-[250px]" />
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="w-full h-[200px] md:h-[250px]"
+                  />
                 </div>
                 <Link to={`/detail/${item.id}`}>
-                  <p className="text-zinc-800 text-[16.92px] font-bold leading-normal">
+                  <p className="text-zinc-800 text-sm md:text-base font-bold leading-normal">
                     {item.name}
                   </p>
                 </Link>
-                <div className="flex gap-4 text-[#505F4E]">
-                  $ {item.price}
-                  <p className="line-through">$ {item.price}</p>
+                <div className="flex gap-2 md:gap-4 text-[#222522]">
+                  <div className="text-[18px]">
+                    {formatCurrency(item.price)}
+                  </div>
+                  <div className="text-red-400 ml-10">
+                    <p className="line-through">{formatCurrency(200000000)}</p>
+                  </div>
                 </div>
-                <div className="mb-15 absolute inset-0 flex justify-center items-center gap-4 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="mb-15 absolute inset-0 flex justify-center items-center gap-2 md:gap-4 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Link to={`/detail/${item.id}`}>
-                    <div className="bg-white p-2 rounded-lg text-green-700 hover:bg-green-700 hover:text-white">
-                      <FaEye className="text-xl" />
+                    <div className="bg-white p-1 md:p-2 rounded-lg text-green-700 hover:bg-green-700 hover:text-white">
+                      <FaEye className="text-lg md:text-xl" />
                     </div>
                   </Link>
                   <div
-                    className="bg-white p-2 rounded-lg text-green-700 hover:bg-green-700 hover:text-white"
+                    className="bg-white p-1 md:p-2 rounded-lg text-green-700 hover:bg-green-700 hover:text-white"
                     onClick={() => handleAddToCart(item)}
                   >
-                    <LiaShoppingBagSolid className="text-xl" />
+                    <LiaShoppingBagSolid className="text-lg md:text-xl" />
                   </div>
-                  <div className="bg-white p-2 rounded-lg text-green-700 hover:bg-green-700 hover:text-white">
-                    <FaRegHeart className="text-xl" />
+                  <div className="bg-white p-1 md:p-2 rounded-lg text-green-700 hover:bg-green-700 hover:text-white">
+                    <FaRegHeart className="text-lg md:text-xl" />
                   </div>
                 </div>
               </div>

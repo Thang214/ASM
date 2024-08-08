@@ -32,7 +32,7 @@ const Checkout = () => {
                 </div>
               </div>
             </div>
-          
+
             {/* <p className="mb-[10px]">
                       Thuế và phí vận chuyển được tính khi thanh toán
                     </p> */}

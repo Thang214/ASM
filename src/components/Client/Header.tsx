@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FaUser,
@@ -8,11 +8,13 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import { CartContextCT } from "../../hook/CartContext/CartContext";
 
 const Header = () => {
   const [growboxDropdownOpen, setGrowboxDropdownOpen] = useState(false);
   const [toepfeDropdownOpen, setToepfeDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cartQty } = useContext(CartContextCT);
 
   const toggleGrowboxDropdown = () => {
     setGrowboxDropdownOpen(!growboxDropdownOpen);
@@ -75,6 +77,9 @@ const Header = () => {
             <Link to={`cart`} className="flex">
               <FaShoppingCart className="mt-1" />
               <p className="ml-2">Giỏ hàng</p>
+              <span className="bg-danger rounded-full w-5 h-5 text-center ml-2 text-[13px]">
+                {cartQty}
+              </span>
             </Link>
           </div>
         </div>

@@ -41,9 +41,6 @@ const BestSellers = ({ products }: Props) => {
 
   return (
     <div className="w-full flex flex-col gap-3">
-      {/* <h3 className="w-[80%] mx-auto text-neutral-600 text-3xl font-normal font-['Baloo'] capitalize tracking-wide">
-        Best Sellers
-      </h3> */}
       <Divider />
       <div className="bg-white">
         <Slider {...settings}>

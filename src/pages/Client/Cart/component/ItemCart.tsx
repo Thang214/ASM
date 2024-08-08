@@ -35,6 +35,13 @@ const ItemCart = () => {
     }
   };
 
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(value);
+  };
+
   return (
     <div>
       <div className="hd-pagecart-items">
@@ -85,7 +92,7 @@ const ItemCart = () => {
                   <div className="hs-prices">
                     <div className="hd-text-price">
                       <ins className="ms-[6px] no-underline text-[#ec0101]">
-                        ${item.price}
+                        {formatCurrency(item.price)}
                       </ins>
                     </div>
                   </div>
@@ -113,7 +120,7 @@ const ItemCart = () => {
                 </div>
                 <div className="hd-total-item hd-col-item text-end w-2/12 lg:block hidden">
                   <span className="font-medium">
-                    ${(parseFloat(item.price) * item.quantity).toFixed(2)}
+                    {formatCurrency(item.price * item.quantity)}
                   </span>
                 </div>
               </div>
@@ -131,8 +138,8 @@ const ItemCart = () => {
                 <strong className="font-semibold">Tổng:</strong>
               </div>
               <div className="hd-col-item w-auto">
-                <div className="text-right font-semibold">
-                  ${totalAmount.toFixed(2)}
+                <div className="text-right font-semibold text-red-500">
+                  {formatCurrency(totalAmount)}
                 </div>
               </div>
             </div>

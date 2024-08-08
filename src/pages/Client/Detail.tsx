@@ -13,7 +13,7 @@ import { axiosInstance } from "../../config/axios";
 import { toast } from "react-toastify";
 
 const Detail = () => {
-  const [quantity, setQuantity] = useState(3);
+  const [quantity, setQuantity] = useState(1);
 
   const handleDecrement = () => {
     if (quantity > 0) {
@@ -55,12 +55,18 @@ const Detail = () => {
         }
 
         addCartItem(cartItem);
-        navigate("/cart");
+        toast.success("Thêm vào giỏ hàng thành công😍");
       } catch (error) {
         console.error("Error adding item to cart:", error);
-        toast.error("Đã xảy ra lỗi khi thêm vào giỏ hàng.");
+        toast.error("Đã xảy ra lỗi khi thêm vào giỏ hàng😢");
       }
     }
+  };
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(value);
   };
   return (
     <div>
@@ -82,18 +88,24 @@ const Detail = () => {
           </div>
         </div>
         <div>
-          <p className="text-[#4E7C32] font-kumbh">CÂY</p>
-          <h1 className="text-4xl font-kumbh font-bold mt-4 mb-4">
+          {/* <p className="text-[#4E7C32] font-kumbh">CÂY</p> */}
+          <h1 className="text-3xl font-kumbh font-bold mt-4 mb-4 md:w-150">
             {data?.name}
           </h1>
-          <span className="text-[#68707D] mt-4">{data?.short_desc}</span>
+          <div className="md:w-150">
+            <span className="text-[#68707D] mt-4 ">{data?.short_desc}</span>
+          </div>
           <div className="flex space-x-4 mt-4">
-            <p className="font-bold">${data?.price}</p>
+            <p className="font-bold text-[22px]">
+              {formatCurrency(data?.price)}
+            </p>
             <span className="bg-[#FFEDE0] text-[#4E7C32] rounded-lg P-2">
               50%
             </span>
           </div>
-          <del className="mt-4 text-sm font-bold text-red-400">$250.00</del>
+          <del className="mt-4 text-sm font-bold text-red-400">
+            {formatCurrency(2000000)}
+          </del>
           <div className="flex space-x-10 mt-4">
             <div className="flex items-center justify-between w-40 p-2 bg-gray-50 rounded-lg">
               <button className="" onClick={handleDecrement}>
@@ -104,28 +116,24 @@ const Detail = () => {
                 <span className="text-2xl">+</span>
               </button>
             </div>
-            <div className="flex bg-[#4E7C32] w-44 py-2 pl-6 rounded-lg">
-              <AiOutlineShoppingCart className="text-white mt-2 mr-2 text-xl" />
-              <button className="text-white" onClick={handleAddToCart}>
-                Thêm vào giỏ
-              </button>
+            <div
+              className="bg-[#298456] text-base h-[50px] w-auto px-[45px] font-semibold rounded-full text-white inline-flex items-center relative overflow-hidden hover:bg-[#4fcd9f] transition-all ease-in-out duration-300"
+              onClick={handleAddToCart}
+            >
+              <AiOutlineShoppingCart className="text-white mr-2 text-xl" />
+              <button className="text-white">Thêm vào giỏ</button>
             </div>
           </div>
         </div>
       </div>
       <div className="ml-32 mt-10">
-        <div className="w-full md:w-[800px]">
-          <p className="text-[#4E7C32] text-2xl">Mô tả</p>
+        <div className="w-full md:w-[1000px]">
+          <p className="text-[#4E7C32] text-2xl mb-2">Mô tả</p>
           <span className="text-[#665345]">{data?.description}</span>
         </div>
-        <div className="mt-6">
-          <p className="text-[#4E7C32] text-2xl">Về sản phẩm</p>
-          <span className="text-[#665345]">
-            Lorem Ipsum là một đoạn văn bản giả, được sử dụng trong ngành in ấn
-            và dàn trang. Lorem Ipsum đã là văn bản giả tiêu chuẩn của ngành kể
-            từ những năm 1500, khi một nhà in vô danh lấy một bộ sưu tập các chữ
-            cái và sắp xếp chúng để tạo ra một cuốn sách mẫu.
-          </span>
+        <div className="mt-6 md:w-[1000px]">
+          <p className="text-[#4E7C32] text-2xl mb-2">Về sản phẩm</p>
+          <span className="text-[#665345]">{data?.about}</span>
         </div>
       </div>
       <div className="flex flex-col md:flex-row ml-32 mt-10">
@@ -133,14 +141,16 @@ const Detail = () => {
         <p className="absolute right-96 text-white bg-[#4E7C32] p-2 rounded-lg">
           Viết đánh giá
         </p>
-        <div className="flex mt-24 text-gray-500">
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
+        <div className="flex mt-20 ml-5 text-gray-500">
+          <FaStar className="w-[30px] h-[30px]" />
+          <FaStar className="w-[30px] h-[30px]" />
+          <FaStar className="w-[30px] h-[30px]" />
+          <FaStar className="w-[30px] h-[30px]" />
+          <FaStar className="w-[30px] h-[30px]" />
         </div>
-        <span className="mt-32 ml-48 text-[#4E7C32] absolute">5.0 (388)</span>
+        <span className="mt-32 ml-60 text-[#4E7C32] absolute text-3xl">
+          5.0 <span className="text-graydark text-[15px] ">(388)</span>
+        </span>
       </div>
       <div className="flex ml-32 mt-10 space-x-1">
         1 <FaStar className="mt-1 border- border-gray-300" />

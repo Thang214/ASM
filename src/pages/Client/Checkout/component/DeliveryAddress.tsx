@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const DeliveryAddress: React.FC = () => {
-  const { cartItems } = useContext(CartContextCT);
+  const { cartItems, clearCart } = useContext(CartContextCT);
   const [infos, setInfos] = useState({
     name: "",
     sdt: "",
@@ -44,20 +44,22 @@ const DeliveryAddress: React.FC = () => {
       await axios.post("http://localhost:3000/orders", order); // Địa chỉ API của bạn
 
       toast.success("Đặt hàng thành công");
+      clearCart();
       navigate("/");
     } catch (error) {
       console.error("Error placing order:", error);
       toast.error("Đã xảy ra lỗi khi đặt hàng. Vui lòng thử lại.");
     }
   };
+
   return (
     <>
-      <div className="bg-white p-4 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-4 text-neutral-600">
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-2xl font-semibold mb-6 text-neutral-600">
           Địa chỉ giao hàng của bạn
         </h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-2 gap-4">
+        <form className="space-y-6" onSubmit={handleSubmit}>
+          <div className="grid grid-cols-2 gap-6">
             <div>
               <label
                 htmlFor="name"
@@ -93,7 +95,7 @@ const DeliveryAddress: React.FC = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 gap-6">
             <div>
               <label
                 htmlFor="email"
@@ -112,7 +114,7 @@ const DeliveryAddress: React.FC = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-6">
             <div>
               <label
                 htmlFor="diachi"
@@ -131,11 +133,11 @@ const DeliveryAddress: React.FC = () => {
               />
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-6">
             <span className="block text-sm font-medium text-neutral-600">
               Giao đến:
             </span>
-            <div className="flex items-center">
+            <div className="flex items-center mt-2">
               <input
                 name="addressType"
                 type="radio"
@@ -148,7 +150,7 @@ const DeliveryAddress: React.FC = () => {
                 Nhà (Giao hàng cả ngày)
               </label>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center mt-2">
               <input
                 name="addressType"
                 type="radio"
@@ -162,33 +164,45 @@ const DeliveryAddress: React.FC = () => {
               </label>
             </div>
           </div>
-        </form>
-      </div>
-      <div className="bg-white p-4 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-4 text-neutral-600">
-          Tổng Sản Phẩm
-        </h2>
-        <form action="" onSubmit={handleSubmit}>
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <span className="text-neutral-600">Tổng phụ</span>
-              <span className="text-neutral-600">Tùy Tâm^^</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-neutral-600">Phí vận chuyển</span>
-              <span className="text-neutral-600">Free Ship Toàn Quốc</span>
-            </div>
-            <div className="flex justify-between font-semibold">
-              <span className="text-neutral-600">Tổng tiền</span>
-              <span className="text-red-600">${totalAmount.toFixed(2)}</span>
-            </div>
-            <button className="bg-[#298456] text-center h-[50px] w-full px-[45px] font-semibold rounded-full text-white hover:bg-[#4fcd9f] transition-all ease-in-out duration-300">
-              Thanh Toán
-            </button>
-          </div>
+          <PaymentSummary totalAmount={totalAmount} />
         </form>
       </div>
     </>
+  );
+};
+
+const PaymentSummary: React.FC<{ totalAmount: number }> = ({ totalAmount }) => {
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(value);
+  };
+  return (
+    <div className="mt-8 bg-gray-50 p-6 rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold mb-6 text-neutral-600">
+        Tổng Sản Phẩm
+      </h2>
+      <div className="space-y-4">
+        <div className="flex justify-between">
+          <span className="text-neutral-600">Tổng phụ</span>
+          <span className="text-neutral-600">Tùy Tâm^^</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-neutral-600">Phí vận chuyển</span>
+          <span className="text-neutral-600">Free Ship Toàn Quốc</span>
+        </div>
+        <div className="flex justify-between font-semibold">
+          <span className="text-neutral-600">Tổng tiền</span>
+          <span className="text-red-600">
+            {formatCurrency(totalAmount.toFixed(2))}
+          </span>
+        </div>
+        <button className="bg-[#298456] text-center h-[50px] w-full px-[45px] font-semibold rounded-full text-white hover:bg-[#4fcd9f] transition-all ease-in-out duration-300">
+          Thanh Toán
+        </button>
+      </div>
+    </div>
   );
 };
 
